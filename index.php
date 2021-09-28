@@ -1,58 +1,38 @@
 <?php
 
-class pessoa{
+class aluno{
   public   $nome;
-  public  $sexo;
-  public   $idade;
-  public  $cpf;
-  public   $celular;
-
-
-
-public function __construct($nome,$sexo,$idade,$cpf,$celular)
-{
-  $this->nome=$nome;
-  $this->sexo=$sexo;
-  $this->idade=$idade;
-  $this->cpf=$cpf;
-  $this->celular=$celular;
+  public  $ra;
+  public   $email;
 }
-}
- $j = new pessoa("Joaquina",'f',27,2059948,99456890);
- $w = new pessoa("Hercules",'m',45,6809,995899);
- $h = new pessoa("Mary",'f',15,908655,9544400);
- $u = new pessoa("Clodoaldo",'m',89,90457,9066);
- $m = new pessoa("Adoniran",'m', 78,90678,9870);
- var_dump($j);
- echo"<br>";
- var_dump($w);
- echo"<br>";
- var_dump($h);
- echo"<br>";
- var_dump($u);
- echo"<br>";
- var_dump($m);
- echo"<br>";
+ 
   class salaVirtual{
-    public $disciplina;
     public $professor;
-    public $dia_da_semana;
+    public $disciplina;
+    public $conteudo;
+    public $data;
+    public $aluno;
+  }
 
-    public function __construct  ($disciplina,$professor,$dia_da_semana)
-    {
-    $this->disciplina=$disciplina;
-    $this->professor=$professor;
-    $this->dia=$dia_da_semana;
-    }
-    };
-  $o=new salaVirtual("Desenvolvimento Web II","Orlando","terça");
- $r=new salaVirtual("Taticas","Rodrigo","sexta");
-
- var_dump($o);
- echo "<br>";
- var_dump($r);
- 
- 
+  $j = new aluno();
+  $j->nome= "Josefina";
+  $j->ra = "4086";
+  $j->email = "josefina.arantes@bol.com.br";
+    
+ $terça = new salaVirtual();
+ $terça->professor="Orlando";
+ $terça->disciplina="Desenvolvimento Web II";
+  $terça->conteudo = "POO";
+  $terça->data = "29/09";
+  $terça->aluno = $j;
+  $aula =array(
+  'professor'=>$terça->professor,
+  'disciplina'=>$terça->disciplina,
+  'conteudo'=>$terça->conteudo,
+  'data'=>$terça->data,
+  'aluno'=>$terça->aluno,
+);
+var_dump($aula);
 
 
 ?>
